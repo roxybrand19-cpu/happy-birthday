@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday My Love</title>
+  <style>
+    * { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #1a1a2e, #0b0b14);
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .stars span {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #ffffff;
+      animation: twinkle 4s infinite ease-in-out;
+      opacity: 0.6;
+    }
+
+    @keyframes twinkle {
+      0%,100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    .card {
+      width: 350px;
+      height: 500px;
+      background: linear-gradient(145deg, #2b2b3f, #141421);
+      border-radius: 22px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+      padding: 26px;
+      text-align: center;
+      animation: fadeIn 2s ease forwards;
+      position: relative;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.85); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .heart {
+      font-size: 52px;
+      color: #ff4d6d;
+      animation: pulse 1.6s infinite;
+      margin-bottom: 6px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.25); }
+      100% { transform: scale(1); }
+    }
+
+    h1 {
+      font-size: 22px;
+      margin: 10px 0;
+      color: #ffb3c6;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: normal;
+      color: #cdb4db;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #f1f1f1;
+      margin-top: 12px;
+    }
+
+    .from {
+      margin-top: 28px;
+      font-style: italic;
+      color: #9a8c98;
+    }
+
+    .btn {
+      margin-top: 24px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #ff4d6d, #c9184a);
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      background: linear-gradient(135deg, #ff758f, #ff4d6d);
+    }
+
+    .music-note {
+      position: absolute;
+      bottom: 16px;
+      right: 18px;
+      font-size: 12px;
+      color: #cdb4db;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!--
+  Musik: Die With A Smile
+  Catatan penting:
+  Karena lagu ini berhak cipta, kamu perlu meng-upload file MP3-nya sendiri
+  ke repository (misalnya: die-with-a-smile.mp3), lalu gunakan kode di bawah.
+-->
+<audio id="bgm" autoplay loop>
+  <source src="die-with-a-smile.mp3" type="audio/mpeg">
+</audio>
+
+  <div class="stars" id="stars"></div>
+
+  <div class="card">
+    <div class="heart">❤</div>
+    <h1>Happy Birthday</h1>
+    <h2>Untuk pacarku yang sangat aku cintai</h2>
+    <p>
+      Di hari kelahiranmu ini,
+      aku ingin kamu tahu…
+      bahkan dalam gelapnya dunia,
+      kamu tetap cahaya yang selalu aku tunggu.
+      semoga dihari lahir mu ini kamu menjadi pribadi yang lebih baik lagi.
+      dan kita tetap bersama sampai kapanpun itu.
+      rafika dwi puspasari.
+      15 desember 2025.
+    </p>
+    <div class="from">— Dari aku, yang selalu mencintaimu</div>
+    <button class="btn" onclick="alert('Selamat ulang tahun, sayang 🖤')">Klik Aku</button>
+    <div class="music-note">♪ music on</div>
+  </div>
+
+  <script>
+    const stars = document.getElementById('stars');
+    for (let i = 0; i < 70; i++) {
+      const s = document.createElement('span');
+      s.style.left = Math.random() * 100 + 'vw';
+      s.style.top = Math.random() * 100 + 'vh';
+      s.style.animationDelay = Math.random() * 5 + 's';
+      stars.appendChild(s);
+    }
+  </script>
+
+</body>
+</html>
